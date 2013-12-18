@@ -1,4 +1,4 @@
-library hapara.gobal.services.endpoints.Endpoint;
+library dartlib.services.endpoints.Endpoint;
 
 //CORE
 import 'dart:html';
