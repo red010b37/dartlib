@@ -7,10 +7,9 @@ import 'dart:convert';
 
 // PACKAGES
 import 'package:logging/logging.dart';
-import "package:google_oauth2_client/google_oauth2_browser.dart";
 
 // IMPORTS
-import '../../data/AppDataDictionary.dart';
+
 
 
 /**
@@ -42,13 +41,12 @@ class Endpoint
    * 
    *     retrun Future
    */
-  Future sendData(String url, {String method: "POST", Map data: null, String loaderId : "0", String contentType:"application/json" })
+  Future sendData(String url, {String method: "POST", Map data: null, String loaderId : "0", String contentType:"application/json", String token:"" })
   {
     
     id = loaderId;
     
-    Token token = appDataDic.oauthToken;
-    String tokenKey = token.data.toString();
+    String tokenKey = token;
     print(tokenKey);
   
     //_logger.info("Requesting endpoint - $url with token $token" );
