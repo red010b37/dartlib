@@ -1,0 +1,31 @@
+<polymer-element name="utils-validation">
+  <template>
+    <style>
+      
+    </style>
+    <div class="row">
+      <div class="col-lg-12">
+        <h3>Validate</h3>
+        <input type="text" class="form-control input-lg " placeholder="Test text here" value="" id="textTestInput"><br>
+        <button type="button" class="btn btn-default btn-sm" on-click="{{onEmailValidateClick}}">Validate only email address</button><br>
+        <br>
+        <button type="button" class="btn btn-default btn-sm" on-click="{{onLengthValidateClick}}">Validate length greater than 3</button><br>
+        <br>
+        <button type="button" class="btn btn-default btn-sm" on-click="{{onValidateAllClick}}">Validate all</button><br>
+        <br>
+        <h4>Errors</h4>
+        <template if="{{is_all_valid}}">
+          <p class="text-success"><strong>All valid!</strong></p>
+        </template>
+        <template if="{{!is_all_valid}}">
+          <p class="text-danger"><strong>There are errors</strong></p>
+        </template>
+        <template repeat="{{errors}}">
+          {{this.errorType}} = {{this.result}}<br>
+        </template>
+      </div>
+    </div>
+  </template>
+  <script type="application/dart" src="Validation.dart"></script>
+</polymer-element>
+
