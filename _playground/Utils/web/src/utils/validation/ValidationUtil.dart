@@ -2,6 +2,38 @@ library dartlib.utils.validation.ValidationUtil;
 
 import 'dart:html';
 
+/**
+ * ValidationUtil for easily validating Strings against specified Rules.
+ * 
+ * A String can be validated against a List of Rules (to any length) or against a single method.
+ * 
+ * A helper Element may optionally be passed that will automatically be shown or hidden using
+ * the 'show' and 'hide' classes used by Bootstrap CSS http://getbootstrap.com/css/#helper-classes.
+ * 
+ *      function mutipleTest()
+ *      {
+ *        ResultMap validationResult = ValidationUtil.validate($['textTestInput'].value, rules:[Rules.EMAIL, Rules.NO_SLASHES]);
+ *        
+ *        // All (if any) errors
+ *        print(validationResult.errors);
+ *        
+ *        // The result
+ *        print(validationResult.result);
+ *        
+ *        if(ValidationUtil.validate($['textTestInput'].value, rules:[Rules.EMAIL, Rules.NO_SLASHES]).result)
+ *        {
+ *          print('This is a valid email with no slashes');
+ *        } else {
+ *          print('May contain an invalid email or have slashes');
+ *        }
+ *        
+ *        for(ValidationResult result in validationResult)
+ *        {
+ *          print('My error is somthing to do with ' + result.errorType);
+ *        }
+ *      }
+ */
+
 class ValidationUtil
 {
   static ResultMap validate(String validationText, {List rules, Element helper:null})
