@@ -1,4 +1,4 @@
-library dartlib.services.endpoints.EndpointServiceHelper;
+library dartlib.services.appEngineEndpoints.EndpointServiceHelper;
 
 class EndpointServiceHelper
 {
