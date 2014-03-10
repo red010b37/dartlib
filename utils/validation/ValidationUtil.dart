@@ -147,7 +147,7 @@ class ValidationUtil
   {
     ValidationResult result;
     
-    if(minLength(validationText, mLength:1, helper:helper).result)
+    if(validationText.isNotEmpty)
     {
       return result = new ValidationResult(true, Rules.NOT_EMPTY);
     } else {
